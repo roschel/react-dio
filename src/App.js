@@ -1,11 +1,20 @@
 import Button from "./components/Button";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+
+import { Home } from "./pages/Home";
+import { Login } from "./pages/Login";
 
 function App() {
   return (
-    <div className="App">
-      <h1>Olá React</h1>
-      <Button title={"Olá"}/>
-    </div>
+    <Router>
+      <div className="App">
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/login" element={<Login />} />
+        </Routes>
+        <Button title={"Olá"} />
+      </div>
+    </Router>
   );
 }
 
