@@ -4,13 +4,11 @@ import { Button } from "../Button";
 import logo from "../../assets/logo-dio.png";
 import {
   BuscarInputContainer,
-  Column,
   Container,
   Input,
   Menu,
   MenuRight,
   Row,
-  UserPicture,
   Wrapper,
 } from "./styles";
 
