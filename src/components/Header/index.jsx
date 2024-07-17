@@ -11,23 +11,34 @@ import {
   Row,
   Wrapper,
 } from "./styles";
+import { UserPicture } from "../UserInfo/styles";
 
-const Header = () => {
+const Header = ({ autenticado = false }) => {
   return (
     <Wrapper>
       <Container>
         <Row>
           <img src={logo} alt="Logo da DIO" />
-          <BuscarInputContainer>
-            <Input placeholder="Buscar..."></Input>
-          </BuscarInputContainer>
-          <Menu>Live Code</Menu>
-          <Menu>Global</Menu>
+          {autenticado ? (
+            <>
+              <BuscarInputContainer>
+                <Input placeholder="Buscar..."></Input>
+              </BuscarInputContainer>
+              <Menu>Live Code</Menu>
+              <Menu>Global</Menu>
+            </>
+          ) : null}
         </Row>
         <Row>
-          <MenuRight href="#">Home</MenuRight>
-          <Button title={"Entrar"} />
-          <Button title={"Cadastrar"} />
+          {autenticado ? (
+            <UserPicture src="https://avatars.githubusercontent.com/u/52433168?s=400&u=1224e8cabc7a1780c42610345c8ce4b667f07b7b&v=4" />
+          ) : (
+            <>
+              <MenuRight href="#">Home</MenuRight>
+              <Button title={"Entrar"} />
+              <Button title={"Cadastrar"} />
+            </>
+          )}
         </Row>
       </Container>
     </Wrapper>
