@@ -18,6 +18,7 @@ import {
   TitleLogin,
   Wrapper,
 } from "./styles";
+import { IFormData } from "./types";
 
 const Login = () => {
   const navigate = useNavigate();
@@ -25,12 +26,12 @@ const Login = () => {
     control,
     handleSubmit,
     formState: { errors },
-  } = useForm({
+  } = useForm<IFormData>({
     reValidateMode: "onChange",
     mode: "onChange",
   });
 
-  const onSubmit = async (formData) => {
+  const onSubmit = async (formData: IFormData) => {
     try {
       const { data } = await api.get(
         `users?email=${formData.email}&senha=${formData.password}`
@@ -74,7 +75,7 @@ const Login = () => {
                 type="password"
                 leftIcon={<MdLock />}
               />
-              {errors.senha && <span>Senha é obrigatório</span>}
+              {errors.password && <span>Senha é obrigatório</span>}
               <Button title={"Entrar"} variant="secondary" type="submit" />
             </form>
             <Row>

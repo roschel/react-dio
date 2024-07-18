@@ -1,9 +1,9 @@
-import React from "react";
 import { Controller } from "react-hook-form";
 
 import { IconContainer, InputContainer, InputText } from "./styles";
+import { IInput } from "./types";
 
-const Input = ({ leftIcon, name, control, ...rest }) => {
+const Input = ({ leftIcon, name, control, ...rest }: IInput) => {
   return (
     <>
       <InputContainer>

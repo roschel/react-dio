@@ -1,4 +1,3 @@
-import React from "react";
 
 import { Button } from "../Button";
 import logo from "../../assets/logo-dio.png";
@@ -12,8 +11,9 @@ import {
   Wrapper,
 } from "./styles";
 import { UserPicture } from "../UserInfo/styles";
+import { IHeader } from "./types";
 
-const Header = ({ autenticado = false }) => {
+const Header = ({ autenticado }: IHeader) => {
   return (
     <Wrapper>
       <Container>
