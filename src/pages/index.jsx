@@ -1,7 +1,7 @@
 import { useState, useEffect, useMemo } from "react";
 
 const Test = () => {
-  const [age, setAge] = useState("João");
+  const [age, setAge] = useState(32);
 
   const handleChangeName = () => {
     setAge((prev) => (prev === 32 ? 26 : 32));
