@@ -1,4 +1,4 @@
-import { useState, useEffect, useMemo, useCallback } from "react";
+import { useState, useCallback } from "react";
 
 const Test = () => {
   const [name, setName] = useState("João");
